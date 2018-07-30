@@ -1,0 +1,18 @@
+
+uint8 MANUAL_POINTCLOUD_ALIGNMENT_INPUT_TYPE_TERMINAL = 0
+uint8 MANUAL_POINTCLOUD_ALIGNMENT_INPUT_TYPE_INTERACTIVE_MARKERS = 1
+uint8 MANUAL_POINTCLOUD_ALIGNMENT_INPUT_TYPE_EXTERNAL_TOPIC = 2
+
+uint8 input_type
+bool iterate_input
+sensor_msgs/PointCloud2 fixed_cloud
+sensor_msgs/PointCloud2 cloud_to_align
+
+bool voxelize_inputs
+float32 voxel_leaf_size
+
+---
+
+sensor_msgs/PointCloud2 aligned_cloud
+geometry_msgs/TransformStamped transform
+bool success
