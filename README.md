@@ -8,8 +8,6 @@ This package provides a utility to allow users to manually input an initial alig
 
 The package is set up to be modular across different input interfaces. Currently, three formats are supported: terminal input, ros service input, and interactive marker input, with the last being the recommended method.
 
-<img src=images/registration.png width="600">
-
 ## Parameter Setup
 Parameter setup for this package is fairly straightforward, following convention in the [pointcloud_processing_server](https://github.com/UTNuclearRoboticsPublic/pointcloud_processing_server) package. Preprocessing specifications are provided to allow the user to downsample and clip the cloud to make it more manageable for transforming and updating during alignment. It is recommended that a clipping task and a voxelization task are undertaken to downsample the input cloud prior to visualization and manual alignment in order to speed the process, at least for large clouds. This is not strictly necessary, though. Either way, the output clouds are created from the original fully dense versions of the clouds, transformed via the final transform selected by the user. 
 
