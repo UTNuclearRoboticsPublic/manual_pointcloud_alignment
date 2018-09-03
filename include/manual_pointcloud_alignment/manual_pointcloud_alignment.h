@@ -12,8 +12,6 @@
 #include <tf2_sensor_msgs/tf2_sensor_msgs.h>
 #include <tf/tf.h>
 
-#include <interactive_markers/interactive_marker_server.h>
-
 #include "manual_pointcloud_alignment/manual_alignment_service.h"
 #include "manual_pointcloud_alignment/transform_input_service.h"
 #include <pointcloud_processing_server/pointcloud_process.h>

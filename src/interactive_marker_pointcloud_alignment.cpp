@@ -9,20 +9,14 @@ InteractiveMarkerPointcloudAlignment::InteractiveMarkerPointcloudAlignment()
 
 	increment_transforms_ = false;
 
-	buildInteractiveMarker();
-
-	while(ros::ok())
-	{
-		ros::spin();
-		ros::Duration(0.05).sleep();
-	}
+	ros::spin();
 }
 
 
 void InteractiveMarkerPointcloudAlignment::buildInteractiveMarker()
 {
 	// Interactive Marker 
-	interactive_marker_.header.frame_id = "map";
+	interactive_marker_.header.frame_id = "/base_link_leveled";
 	interactive_marker_.header.stamp 	= ros::Time::now();
 	interactive_marker_.name 			= "cloud_moving_interactive_marker";
 	interactive_marker_.description  	= "6 DOF Control to Manually Align Pointclouds";
@@ -139,6 +133,8 @@ bool InteractiveMarkerPointcloudAlignment::transformInputLoop(sensor_msgs::Point
 {
 	sensor_msgs::PointCloud2 new_aligned_cloud = cloud_to_align;
 
+	buildInteractiveMarker();
+
 	while(ros::ok() && !transform_accepted_)
 	{
 		// Get a transform to try from the user 
@@ -165,10 +161,13 @@ bool InteractiveMarkerPointcloudAlignment::transformInputLoop(sensor_msgs::Point
 		//   if the user replies in the negative (transform is not good) then transform_accepted_ will be set to false and loop will repeat
 		if( !checkAcceptance() )
 		{
+			interactive_marker_server_.erase("cloud_moving_interactive_marker");
 			ROS_ERROR_STREAM("[ManualPointcloudAlignment] Attempt to check transform acceptability failed. Exiting service call without changing the cloud...");
 			return false;
 		}
 	}
+	interactive_marker_server_.erase("cloud_moving_interactive_marker");
+	interactive_marker_server_.applyChanges();
 	return true;
 }
 
