@@ -168,6 +168,19 @@ add_dependencies(
    ${catkin_EXPORTED_TARGETS}
 )
 
+
+add_executable(example_client src/example_client.cpp)
+target_link_libraries( 
+  example_client
+  ${catkin_LIBRARIES}
+)
+add_dependencies(
+  example_client
+  ${pointcloud_registration_server_EXPORTED_TARGETS}
+   ${catkin_EXPORTED_TARGETS}
+)
+
+
 #############
 ## Install ##
 #############

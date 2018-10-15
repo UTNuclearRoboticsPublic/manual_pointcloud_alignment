@@ -1,0 +1,34 @@
+
+
+
+<launch>
+	
+	<rosparam  command="load"  file="$(find manual_pointcloud_alignment)/param/manual_pointcloud_alignment_preprocess.yaml"/>
+	<rosparam  command="load"  file="$(find manual_pointcloud_alignment)/param/alignment_example.yaml"/>
+	
+	<node
+		name    = "interactive_marker_pointcloud_alignment"
+      	pkg     = "manual_pointcloud_alignment"
+      	type    = "interactive_marker_pointcloud_alignment"
+      	output  = "screen"
+  	> 
+	</node>
+
+	<node
+		name    = "example_client"
+      	pkg     = "manual_pointcloud_alignment"
+      	type    = "example_client"
+      	output  = "screen"
+  	> 
+	</node>
+
+	<node
+		name    = "pointcloud_processing_server"
+      	pkg     = "pointcloud_processing_server"
+      	type    = "pointcloud_processing_server"
+      	output  = "screen"
+      	args    = "-intensity"
+  	> 
+	</node>
+
+</launch>

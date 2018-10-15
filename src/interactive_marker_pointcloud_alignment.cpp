@@ -16,7 +16,7 @@ InteractiveMarkerPointcloudAlignment::InteractiveMarkerPointcloudAlignment()
 void InteractiveMarkerPointcloudAlignment::buildInteractiveMarker()
 {
 	// Interactive Marker 
-	interactive_marker_.header.frame_id = "/base_link_leveled";
+	interactive_marker_.header.frame_id = "/map";
 	interactive_marker_.header.stamp 	= ros::Time::now();
 	interactive_marker_.name 			= "cloud_moving_interactive_marker";
 	interactive_marker_.description  	= "6 DOF Control to Manually Align Pointclouds";

@@ -103,6 +103,9 @@ bool TerminalPointcloudAlignment::transformInputLoop(sensor_msgs::PointCloud2 &f
 		ROS_INFO_STREAM("[ManualPointcloudAlignment] Received new transform.");
 		ROS_INFO_STREAM("[ManualPointcloudAlignment] Translation: " << last_transform_.transform.translation.x << " " << last_transform_.transform.translation.y << " " << last_transform_.transform.translation.z);
 		ROS_INFO_STREAM("[ManualPointcloudAlignment] Rotation:    " << last_transform_.transform.rotation.x << " " << last_transform_.transform.rotation.y << " " << last_transform_.transform.rotation.z << " " << last_transform_.transform.rotation.w);
+		ROS_INFO_STREAM("[ManualPointcloudAlignment] Current entire transform:");
+		ROS_INFO_STREAM("[ManualPointcloudAlignment] Translation: " << output_transform.transform.translation.x << " " << output_transform.transform.translation.y << " " << output_transform.transform.translation.z);
+		ROS_INFO_STREAM("[ManualPointcloudAlignment] Rotation:    " << output_transform.transform.rotation.x << " " << output_transform.transform.rotation.y << " " << output_transform.transform.rotation.z << " " << output_transform.transform.rotation.w);
 
 		// Check with user whether new alignment is good
 		//   checkAcceptance only returns false if the check itself fails to receive a response properly!
