@@ -13,7 +13,7 @@ pointcloud_process:
         publish_topic:    clipped_cloud
       voxelize:           
         type:             voxelizing
-        leaf_sizes:       [ 0.03, 0.03, 0.03 ]
+        leaf_sizes:       [ 0.005, 0.005, 0.005 ]
         keep_ordered:     false
         should_publish:   true
         publish_topic:    voxelized_cloud

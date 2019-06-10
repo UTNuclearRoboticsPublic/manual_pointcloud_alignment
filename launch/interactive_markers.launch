@@ -7,9 +7,9 @@
 	<rosparam  command="load"  file="$(find manual_pointcloud_alignment)/param/alignment_example.yaml"/>
 	
 	<node
-		name    = "interactive_marker_pointcloud_alignment"
+		name    = "terminal_pointcloud_alignment"
       	pkg     = "manual_pointcloud_alignment"
-      	type    = "interactive_marker_pointcloud_alignment"
+      	type    = "terminal_pointcloud_alignment"
       	output  = "screen"
   	> 
 	</node>

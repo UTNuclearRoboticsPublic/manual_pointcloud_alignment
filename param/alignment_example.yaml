@@ -1,6 +1,6 @@
 
 alignment_example:
-  bag_topic:       /laser_stitcher/full_scan
-  bag_name_1:      /home/conor/ros_data/trees/15 ahg_between oak and cypress/laser_stitcher_1538945233.557749.bag
-  bag_name_2:      /home/conor/ros_data/trees/16 ahg between cypress and tml/laser_stitcher_1538945505.050285.bag
+  bag_topic:       /right_wall
+  bag_name_1:      /home/conor/ros_data/Final_Thesis_Tests/input_data/1a.bag
+  bag_name_2:      /home/conor/ros_data/Final_Thesis_Tests/input_data/1d.bag
 #  bag_name_2:      /home/conor/ros_data/trees/18 ahg under bald cypress/laser_stitcher_1538946077.467459.bag
